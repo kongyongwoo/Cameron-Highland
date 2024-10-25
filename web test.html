@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Cameron Highland Trip 15-17NOV 2024</title>
+    <style>
+        /* Flexbox centering for the whole page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f4f8;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Container for all content */
+        .content-container {
+            width: 90%; /* Limits width of content */
+            max-width: 1000px; /* Maximum width */
+            text-align: center; /* Centers text and images */
+            padding: 40px; /* Add padding inside the container */
+            background-color: azure;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0,0.1);
+            margin: 20px; /* Adds space around the content container */
+        }
+
+        /* Heading animation: fade in */
+        @keyframes fadeIn{
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px; /* Adds space below the heading */
+            animation: fadeIn 2s ease-in; /* Fade in effect */
+        }
+
+        /* Flexbox container for images */
+        .image-container {
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Centers images horizontally */
+            margin-top: 40px; /* Space between text and images */
+            
+        }
+
+        /* Style for individual images */
+        figure {
+            margin: 20px auto; /* Adds space between images */
+        }
+
+        /* Style for images */
+        img {
+            border: 3px solid #ccc;
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease-in-out; /* Smooth transition on hover */
+        }
+
+        /* Hover effect for images */
+        img:hover {
+            transform: scale(1.2); /* Grow image when hovered */
+        }
+
+        /* Style for figure captions */
+        figcaption {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-top: 10px; /* Space between image and caption */
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px; /* Space after paragraphs */
+        }
+
+        /* Style for the link */
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        /* Style for the link when hovered */
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Styling the button */
+        button {
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            padding: 15px 20px; /* Space inside the button */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Change cursor to pointer */
+            font-size: 16px; /* Text size */
+            transition: background-color 0.3s ease-in-out, transform 0.2s; /* Smooth animation */
+        }
+
+        /* Button hover effect */
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+            transform: scale(1.05); /* Slightly enlarge button */
+        }
+
+        /* Button active (when clicked) */
+        button:active {
+            transform: scale(0.95); /* Slightly shrink button on click */
+        }
+
+        /* Center the cat image */
+        #myImage {
+            margin: 20px auto; /* Center the image horizontally */
+            display: none; /* Hidden by default */
+        }
+
+        /* Centering div for cat image */
+        .centered-image-container {
+            display: flex;
+            justify-content: center; /* Center the image horizontally */
+        }
+
+        /* Modal (pop-up) styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+        }
+
+        /* Scrollable modal content */
+        .modal-content {
+            background-color: white;
+            margin: 15% auto; /* Center the modal */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Width of the modal */
+            max-height: 70vh; /* Set max height to allow scrolling */
+            overflow-y: auto; /* Enable vertical scrolling */
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Blinking message */
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .blinking-message {
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+            animation: blink 1s infinite; /* Blinking effect */
+        }
+
+        /* Style for removing bullets */
+        .no-bullets {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        /* Style for trip plan photos */
+        .trip-photo {
+            width: 100%; /* Set appropriate width for the photos */
+            max-width: 400px;
+            margin: 10px 0; /* Add some space around the images */
+        }
+    </style>
+
+<script>
+    /* JavaScript function to toggle image */
+    function toggleImage() {
+        let image = document.getElementById("myImage");
+        if (image.style.display === "none") {
+            image.style.display = "block"; // Show image
+        } else {
+            image.style.display = "none"; // Hide image
+        }
+    }
+    /* Function to open the modal */
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    /* Function to close the modal */
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+</script>
+
+</head>
+<body>
+    
+    <!-- Flexbox container for images -->
+    <div class="content-container">
+        <h1>Welcome to Cameron Highland Trip 15-17NOV 2024!</h1>
+        <p>This is my first webpage.</p>
+
+    <div class="image-container">
+    <!-- Click on the girl.jpg image to show the modal -->
+        <figure onclick="openModal()">
+            <img src="girl.jpg" alt="LIM XU YAO 林煦瑶" width="600">
+            <figcaption>LIM XU YAO 林煦瑶</figcaption>
+        </figure>
+        <p class="blinking-message">Click on the image to view my Cameron trip plan!</p> <!-- Blinking message -->
+    </div>
+
+    <!-- Adding a link -->
+    <p>Want to visit another website? <a href="https://wanderlog.com/view/kfdeubdpec/cameron-highlands-之旅/shared">Click here!</a></p>
+    
+     <!-- Centered div for the cat image -->
+     <div class="centered-image-container">
+        <img id="myImage" src="cute cat.webp" alt="Image to toggle" width="400"> <!-- Hidden by default, centered, and width set to 400px -->
+    </div>
+
+    <!-- Adding a button to toggle the image -->
+    <button onclick="toggleImage()">Toggle Image</button>
+
+    <!-- Modal (pop-up window) -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Cameron Highland Trip Plan</h2>
+
+            <p><strong>Day 1 - Friday, 15th November:</strong></p>
+            <p><strong>0630 - 0800:</strong> Departure (Location: JPO KULAI)</p>            
+            <p><strong>0800 - 0900:</strong> Breakfast (Location: R&R Pagoh Utara Northbound)</p>
+            <p><strong>0900 - 1300:</strong> Arrival (Location: Cameron Highland)</p>
+            <p><strong>1330 - 1600:</strong> Lunch & checkin homestay (Location: Agro Market & TBD)</p>
+            <p><strong>1800 - 2000:</strong> Dinner (Location: 西洋菜谷)</p>
+            <img class="trip-photo" src="girl.jpg" alt="Day 1 Photo">
+
+            <p><strong>Day 2 - Saturday, 16th November:</strong></p>
+            <p><strong>8:00 AM - 10:00 AM:</strong> Mossy Forest Hike (Location: Mossy Forest, Gunung Brinchang)</p>
+            <p><strong>11:00 AM - 1:00 PM:</strong> Visit Strawberry Farm (Location: Big Red Strawberry Farm)</p>
+            <p><strong>2:00 PM - 4:00 PM:</strong> Visit Butterfly Garden (Location: Cameron Butterfly Garden)</p>
+            <p><strong>6:00 PM - 8:00 PM:</strong> Dinner and relax at the hotel</p>
+            <img class="trip-photo" src="cat.jpg" alt="Day 2 Photo">
+
+            <p><strong>Day 3 - Sunday, 17th November:</strong></p>
+            <p><strong>9:00 AM - 11:00 AM:</strong> Visit Cactus Valley (Location: Cactus Valley, Brinchang)</p>
+            <p><strong>11:30 AM - 1:00 PM:</strong> Scenic Viewpoint and Photos (Location: Gunung Brinchang Viewpoint)</p>
+            <p><strong>2:00 PM - 4:00 PM:</strong> Departure and travel back home</p>
+            <img class="trip-photo" src="girl.jpg" alt="Day 3 Photo">
+        </div>
+   </div>
+</body>
+</html>
